@@ -1,0 +1,26 @@
+{
+  "name": "filmjsapiconsumming",
+  "version": "1.0.0",
+  "description": "This is a sample producto to remind ow to consume Api Restful",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alipser/FilmsJSApi.git"
+  },
+  "keywords": [
+    "Js"
+  ],
+  "author": "Romario Julio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alipser/FilmsJSApi/issues"
+  },
+  "homepage": "https://github.com/Alipser/FilmsJSApi#readme",
+  "dependencies": {
+    "axios": "^1.4.0"
+  }
+}
