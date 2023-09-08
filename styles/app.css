@@ -102,15 +102,15 @@ button {
 .trendingPreview-container,
 .categoriesPreview-container,
 footer {
-    
+
     margin-top: 48px
 }
 
-footer{
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 40px;
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
 }
 
 .trendingPreview-header,
@@ -123,7 +123,9 @@ footer{
 }
 
 .movie-img {
-    border-radius: 8px
+    border-radius: 8px;
+    min-height: 220px;
+    max-width: 272px;
 }
 
 .categoriesPreview-list,
@@ -206,7 +208,7 @@ footer{
 
 .trendingPreview-movieList {
     overflow-x: scroll;
-    overflow-y: scroll;
+    overflow-y: hidden;
     white-space: nowrap;
     height: 241px;
     padding-left: 24px;
@@ -238,7 +240,7 @@ footer{
     .category-container {
         width: 45%
     }
-  }
+}
 
 .category-title {
     margin-bottom: 8px;
@@ -344,7 +346,7 @@ footer{
 
 .genericList-container .movie-container {
     display: inline-block;
-    
+
 }
 
 .genericList-container .movie-img {
@@ -358,7 +360,7 @@ footer{
     margin-top: 403px;
     width: 100%;
     padding-bottom: 100px;
-    
+
     position: absolute;
     background-color: var(--purple-light-1)
 }
@@ -431,4 +433,65 @@ footer {
 
 .inactive {
     display: none
+}
+
+.loading {
+    background-color: #3E0F64;
+    border-radius: 12px;
+    animation: loading-skeleton infinite 3.5s;
+}
+
+.trendingPreview-movieList .movie-container .loading:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.trendingPreview-movieList .movie-container .loading:nth-child(3) {
+    animation-delay: .4s;
+}
+
+.trendingPreview-movieList .movie-container .loading:nth-child(3) {
+    animation-delay: .6s;
+}
+
+.trendingPreview-movieList .movie-container .loading:nth-child(4) {
+    animation-delay: .8s;
+}
+
+@keyframes loading-skeleton {
+
+    0%,
+    100% {
+        opacity: 100%;
+    }
+
+    50% {
+        opacity: 0%;
+    }
+}
+
+ul{
+    list-style: none;
+}
+li{
+    cursor: pointer;
+    border: #5C218A solid;
+    width: 30px;
+    height: 30px;
+    padding: auto, 0;
+    display: flex;
+    justify-content: center;
+}
+
+.paginatorOutterbox {
+    width: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+    gap: 1vw;
+}
+
+.actualPagination{
+    background-color: #2A0646;
+    color: #EEEAF2;
 }

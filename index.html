@@ -17,31 +17,85 @@
     <span class="header-arrow inactive">&lt;</span>
     <h1 class="header-title">Consumo de API REST con Fetch y Axios</h1>
     <h1 class="header-title header-title--categoryView inactive">Acción</h1>
+    <div class="paginator-container">
+      <ul class="paginatorOutterbox">
+        <li class="paginatorDicreaser"><</li>
+        <li class="first">1</li>
+        <li class="second"> 2</li>
+        <li class="third">  3</li>
+        <li>...</li>
+        <li class="paginatorIncreaser">></li>
+      </ul>
+    </div>
 
     <form id="searchForm" class="header-searchForm">
       <input type="text" placeholder="Vengadores" />
       <button id="searchBtn">🔍</button>
     </form>
+
   </header>
 
   <section id="trendingPreview" class="trendingPreview-container">
     <div class="trendingPreview-header">
       <h2 class="trendingPreview-title">Tendencias</h2>
       <button class="trendingPreview-btn">Ver más</button>
+      
     </div>
 
+    
+
     <article class="trendingPreview-movieList">
+      <div class="movie-container">
+        <img class="movie-img loading"/>
+        <img class="movie-img loading"/>
+        <img class="movie-img loading"/>
+        <img class="movie-img loading"/>
+        <img class="movie-img loading"/>
+      </div>
     </article>
   </section>
 
   <section id="categoriesPreview" class="categoriesPreview-container">
     <h2 class="categoriesPreview-title">Categorías</h2>
-
+ 
     <article class="categoriesPreview-list">
+      <div class="category-container">
+        <h3 class="category-title loading">
+        </h3>
+      </div>
+      <div class="category-container">
+        <h3 class="category-title loading">
+        </h3>
+      </div>
+      <div class="category-container">
+        <h3 class="category-title loading">
+        </h3>
+      </div>
+      <div class="category-container">
+        <h3 class="category-title loading">
+        </h3>
+      </div>
+      <div class="category-container">
+        <h3 class="category-title loading">
+        </h3>
+      </div>
+      <div class="category-container">
+        <h3 class="category-title loading">
+        </h3>
+      </div>
+
     </article>
   </section>
 
   <section id="genericList" class="genericList-container inactive">
+    <div class="movie-container">
+      <img class="movie-img loading"/>
+      <img class="movie-img loading"/>
+      <img class="movie-img loading"/>
+      <img class="movie-img loading"/>
+      <img class="movie-img loading"/>
+    </div>
+  </article>
   </section>
 
   <section id="movieDetail" class="movieDetail-container inactive">
@@ -53,15 +107,16 @@
 
     <article class="categories-list">
       <div class="category-container">
-        <h3 id="id28" class="category-title">Romance</h3>
+        <h3 class="category-title loading">
+        </h3>
       </div>
-
       <div class="category-container">
-        <h3 id="id16" class="category-title">Drama</h3>
+        <h3 class="category-title loading">
+        </h3>
       </div>
-
       <div class="category-container">
-        <h3 id="id14" class="category-title">Acción</h3>
+        <h3 class="category-title loading">
+        </h3>
       </div>
     </article>
 
@@ -70,27 +125,19 @@
 
       <div class="relatedMovies-scrollContainer">
         <div class="movie-container">
-          <img
-            src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-            class="movie-img"
-            alt="Nombre de la película"
-          />
+          <img class="movie-img loading"/>
+          <img class="movie-img loading"/>
+          <img class="movie-img loading"/>
+          <img class="movie-img loading"/>
+          <img class="movie-img loading"/>
+        </div>
         </div>
         
         <div class="movie-container">
-          <img
-            src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-            class="movie-img"
-            alt="Nombre de la película"
-          />
-        </div>
-        
+
+        </div>        
         <div class="movie-container">
-          <img
-            src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
-            class="movie-img"
-            alt="Nombre de la película"
-          />
+
         </div>
       </div>
     </article>

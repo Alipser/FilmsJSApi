@@ -28,3 +28,12 @@ const movieDetailScore = document.querySelector('.movieDetail-score');
 
 const containerimagenes=document.querySelector('.movie-container');
 const imagenes=document.querySelector('.movie-container .movie-img');
+
+//Trends
+
+const paginatorContainer = document.querySelector('.paginator-container')
+const paginatorIncreaser = document.querySelector('div.paginator-container .paginatorOutterbox li.paginatorIncreaser')
+const paginatorDicreaser = document.querySelector('div.paginator-container .paginatorOutterbox li.paginatorDicreaser')
+const paginatorFirstBox = document.querySelector('div.paginator-container .paginatorOutterbox li.first')
+const paginatorSecondBox = document.querySelector('div.paginator-container .paginatorOutterbox li.second')
+const paginatorThirdBox = document.querySelector('div.paginator-container .paginatorOutterbox li.third')
