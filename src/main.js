@@ -1,3 +1,5 @@
+var page = 1
+
 async function getTrendingMovies() {
     try {
 
@@ -8,7 +10,7 @@ async function getTrendingMovies() {
     if (response.status == 200) {
 
         movies = response.data.results;
-        console.log(movies);
+        
 
         const moviesContainer = document.querySelector('#trendingPreview .trendingPreview-movieList');
         moviesContainer.innerHTML = ""
@@ -68,8 +70,11 @@ async function getMoviesCategories() {
 
 async function getMoviesByGenre(id) {
     
-    let result = await apiAxios(`/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${id}`);
-    console.log(result);
+    
+    
+
+    
+    let result = await apiAxios(`/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=${id}`);
     if (result.status == 200) {
         let movies = result.data.results
 
@@ -93,6 +98,15 @@ async function getMoviesByGenre(id) {
             // moviesContainer.appendChild(singleMovieContainer);
             moviesContainer.appendChild(singleMovieContainer);
         })
+        
+        window.addEventListener('scroll',  prueba = ()=>{
+            pruebaasync(id);
+            
+
+            
+        })
+        
+        
 
     }
 
@@ -133,7 +147,6 @@ async function getMovieDetails(movie_id) {
     movieDetailScore.innerHTML = result.data.vote_average.toFixed(2);
     movieDetailDescription.innerHTML = result.data.overview;
     const movieImgUrl = 'https://image.tmdb.org/t/p/w500' + result.data.poster_path;
-    console.log(movieImgUrl)
     headerSection.style.background = `
     linear-gradient(
       180deg,
@@ -198,6 +211,19 @@ function insertCategories(categoriesContainer, categories) {
         singleCategorie.appendChild(categoryTitle);
         categoriesContainer.appendChild(singleCategorie);
     })
+}
+
+async function pruebaasync (id){ 
+          
+    let scrollHeight = document.documentElement.scrollHeight;
+    let scrollTop = document.documentElement.scrollTop;
+    let clientHeight= document.documentElement.clientHeight;
+    let scrollBottom = scrollTop + clientHeight > scrollHeight-20  ;        
+    if (scrollBottom){ 
+        page+=1        
+        await getMoviesByGenre(id, page);        
+        window.removeEventListener('scroll', prueba)
+    }
 }
 
 

@@ -35,6 +35,7 @@ function homePage() {
     getMoviesCategories();
 }
 function categories() {
+    
     let navigationInformation = location.hash.split('=')[1].split('-');
     let id = navigationInformation[0];
     let categoriename = decodeURI(navigationInformation[1]);
@@ -96,6 +97,7 @@ function searchPage() {
     movieDetailSection.classList.add('inactive');
 }
 function trendsPage() {
+    paginatorContainer.classList.add('inactive')
     
     let navigationInformation = location.hash.split('=')
     paginatorContainer.classList.remove('inactive');
