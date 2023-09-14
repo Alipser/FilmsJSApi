@@ -95,12 +95,12 @@ button {
 
 .header-container,
 .trendingPreview-header,
-.categoriesPreview-container {
+.categoriesPreview-container, .likedMovies-header {
     padding: 0 24px
 }
 
 .trendingPreview-container,
-.categoriesPreview-container,
+.categoriesPreview-container, .likedMovies-container,
 footer {
 
     margin-top: 48px
@@ -114,11 +114,11 @@ footer {
 }
 
 .trendingPreview-header,
-.categoriesPreview-title {
+.categoriesPreview-title, .likedMovies-header{
     margin-bottom: 24px
 }
 
-.movie-container {
+.movie-container, .likedMovies-movie-container {
     cursor: pointer
 }
 
@@ -194,19 +194,19 @@ footer {
     border-bottom-right-radius: 8px
 }
 
-.trendingPreview-header {
+.trendingPreview-header, .likedMovies-header {
     display: flex;
     align-items: center;
     justify-content: space-between
 }
 
-.trendingPreview-btn {
+.trendingPreview-btn, .likedMovies-btn {
     border-radius: 8px;
     height: 32px;
     width: 72px
 }
 
-.trendingPreview-movieList {
+.trendingPreview-movieList, .likedMovies-movieList{
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
@@ -215,12 +215,12 @@ footer {
     padding-bottom: 16px
 }
 
-.trendingPreview-movieList .movie-container {
+.trendingPreview-movieList .movie-container, .likedMovies-movie-container {
     display: inline-block;
     margin-right: 8px
 }
 
-.trendingPreview-movieList .movie-container .movie-img {
+.trendingPreview-movieList .movie-container .movie-img, .LikedMovie-img {
     height: 225px;
     min-height: 225px;
     max-height: 225px;
@@ -344,7 +344,7 @@ footer {
     gap: 2vw
 }
 
-.genericList-container .movie-container {
+.genericList-container .movie-container , .likedMovies-movie-container {
     display: inline-block;
 
 }
@@ -407,7 +407,7 @@ footer {
     padding-bottom: 16px
 }
 
-.relatedMovies-scrollContainer .movie-container {
+.relatedMovies-scrollContainer .movie-container, .likedMovies-movie-container {
     display: inline-block;
     margin-right: 8px
 }
@@ -494,4 +494,41 @@ li{
 .actualPagination{
     background-color: #2A0646;
     color: #EEEAF2;
+}
+
+
+.like_Button{
+    top: 2px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: #5C218A;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 3;
+    
+}
+.like_Button::before{
+    content: "👍";
+}
+
+.selected{
+    background-color: #faf9fb;
+    box-shadow: 0px 0px 2px #2A0646;
+}
+
+.selected::before{
+    content: "👎"; 
+    mix-blend-mode: multiply; 
+}
+
+.likedMovies-movieList{
+    display: inline-flex;
+    gap: 12px;
+    overflow-x: scroll;
+}
+
+.likedMovies .movie-img{
+    width: 100px;
+    height: 50px;
 }

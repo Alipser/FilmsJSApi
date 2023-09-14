@@ -7,6 +7,7 @@ function navigation() {
     } else if (location.hash.startsWith('#search=')) {
         searchPage();
     } else if (location.hash.startsWith('#movie=')) {
+        relatedMoviesContainer.innerHTML=""
         movieDetailsPage();
     } else if (location.hash.startsWith('#category=')) {
         categories();
@@ -17,6 +18,7 @@ function navigation() {
 
 }
 function homePage() {
+    likedMoviesContainer.classList.remove('inactive');
     headerSection.classList.remove('header-container--long');
     headerSection.style.background = '';
     searchFormInput.value = "";
@@ -33,9 +35,17 @@ function homePage() {
     movieDetailSection.classList.add('inactive');
     getTrendingMovies();
     getMoviesCategories();
+    let storageLikedMovies = likedMovies();
+    let likedcont = document.querySelector('.likedMovies-movieList');
+    let arrayliked = [];
+    for (const movie in storageLikedMovies) {
+        arrayliked.push(storageLikedMovies[movie])
+    }
+    likedcont.innerHTML=""    
+    insertImage(likedcont, arrayliked)
 }
 function categories() {
-    
+    likedMoviesContainer.classList.add("inactive");
     let navigationInformation = location.hash.split('=')[1].split('-');
     let id = navigationInformation[0];
     let categoriename = decodeURI(navigationInformation[1]);
@@ -57,6 +67,7 @@ function categories() {
     getMoviesByGenre(id)
 }
 function movieDetailsPage() {
+    likedMoviesContainer.classList.add('inactive');
     let navigationInformation = location.hash.split('=')[1].split('-');
     let id = navigationInformation[0];
     let movieTitle = decodeURI(navigationInformation[1]);
@@ -77,7 +88,7 @@ function movieDetailsPage() {
     movieDetailSection.classList.remove('inactive');
 }
 function searchPage() {
-
+    likedMoviesContainer.classList.add("inactive");
     headerCategoryTitle.innerHTML = '';
     let navigationInformation = decodeURI(location.hash.split('=')[1]);
     searchFormInput.placeholder = navigationInformation;
@@ -97,6 +108,7 @@ function searchPage() {
     movieDetailSection.classList.add('inactive');
 }
 function trendsPage() {
+    likedMoviesContainer.classList.add("inactive");
     paginatorContainer.classList.add('inactive')
     
     let navigationInformation = location.hash.split('=')
@@ -174,9 +186,7 @@ paginatorDicreaser.addEventListener('click', ()=>{
     if(location.hash.startsWith('#trends')){
         let navigationInformation=location.hash.split('=');
         let page = navigationInformation[1];
-        let newpage = parseInt(navigationInformation[1]) -1;
-        debugger;
-        
+        let newpage = parseInt(navigationInformation[1]) -1;        
         if (newpage >= 1 ){
             location.hash=`${navigationInformation[0]}=${newpage}`
         }else{

@@ -37,3 +37,8 @@ const paginatorDicreaser = document.querySelector('div.paginator-container .pagi
 const paginatorFirstBox = document.querySelector('div.paginator-container .paginatorOutterbox li.first')
 const paginatorSecondBox = document.querySelector('div.paginator-container .paginatorOutterbox li.second')
 const paginatorThirdBox = document.querySelector('div.paginator-container .paginatorOutterbox li.third')
+
+
+// Liked movies
+
+const likedMoviesContainer = document.getElementById("likedMovies")
