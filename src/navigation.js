@@ -67,6 +67,7 @@ function categories() {
     getMoviesByGenre(id)
 }
 function movieDetailsPage() {
+    paginatorContainer.classList.add("inactive")
     likedMoviesContainer.classList.add('inactive');
     let navigationInformation = location.hash.split('=')[1].split('-');
     let id = navigationInformation[0];
